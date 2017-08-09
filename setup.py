@@ -49,7 +49,16 @@ else:
         fh.write(version_template.format(__version__))
 
 
-setup(
+from pprint import pprint
+from distutils.sysconfig import _config_vars
+print('~~~~~~ BEGIN _config_vars ~~~~~~')
+pprint(_config_vars)
+print('~~~~~~ END _config_vars ~~~~~~')
+print('~~~~~~ BEGIN os.system("env") ~~~~~~')
+os.system("env")
+print('~~~~~~ BEGIN os.system("env") ~~~~~~')
+
+dist = setup(
     name=pypkg,
     version=__version__,
     description='Demo python+cython project',
