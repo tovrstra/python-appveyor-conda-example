@@ -7,9 +7,6 @@ source:
 
 build:
   number: 0
-  # As soon as miniconda comes with Python built against the latest gcc distributed by
-  # conda, we can remove CC=${CC}.
-  script: CC=${CC} python setup.py install
 
 requirements:
   build:
