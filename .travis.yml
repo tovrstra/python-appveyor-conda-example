@@ -68,6 +68,7 @@ script:
 - python setup.py sdist
 
 # Install Conda package
+- env
 - conda install --use-local $PYPKG
 
 # Compile documentation
