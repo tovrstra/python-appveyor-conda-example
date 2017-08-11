@@ -51,10 +51,10 @@ install:
   # See https://github.com/conda/conda-build/issues/2263
   - conda config --add channels c3i_test
   - conda update -q conda
-  - conda info -a
   # A few things must be installed for the build and deployment steps. Also dependencies
   # for setup.py must be pre-installed.
   - conda install python=%PYTHON_VERSION% conda-build anaconda-client numpy cython
+  - conda info -a
 
 build: false
 
