@@ -10,6 +10,23 @@ import numpy as np
 from setuptools import setup, Extension
 import Cython.Build
 
+print('~~~~~~ os.environ ~~~~~~')
+for key in 'CC', :
+    print('{}={}'.format(key, os.environ.get(key)))
+print('~~~~~~ os.environ ~~~~~~')
+
+print('~~~~~~ sysconfig ~~~~~~')
+import sysconfig
+for key in 'CC', 'LDSHARED', 'CONFIG_ARGS':
+    print('{}={}'.format(key, sysconfig.get_config_var(key)))
+print('~~~~~~ sysconfig ~~~~~~')
+print('~~~~~~ distutils.sysconfig ~~~~~~')
+import distutils.sysconfig
+for key in 'CC', 'LDSHARED', 'CONFIG_ARGS':
+    print('{}={}'.format(key, distutils.sysconfig.get_config_var(key)))
+print('~~~~~~ distutils.sysconfig ~~~~~~')
+
+
 
 pypkg="pycydemo"
 
@@ -49,7 +66,7 @@ else:
         fh.write(version_template.format(__version__))
 
 
-setup(
+dist = setup(
     name=pypkg,
     version=__version__,
     description='Demo python+cython project',
