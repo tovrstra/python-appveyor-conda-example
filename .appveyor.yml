@@ -46,7 +46,10 @@ install:
 
 # Load the conda root environment, configure and install some packages
 - '"%CONDA%\Scripts\activate.bat"'
-- conda config --set always_yes yes --set changeps1 no
+- conda config --set always_yes yes
+# Needed for compiler('c') function, temporary solution:
+# See https://github.com/conda/conda-build/issues/2263
+- conda config --add channels c3i_test
 - conda update -q conda
 - conda install conda-build anaconda-client numpy cython
 # Install codecov tool for uploading coverage reports
@@ -64,7 +67,7 @@ build: false
 
 test_script:
   # Build the package
-  - "%CMD_IN_ENV% conda build tools/conda.recipe"
+  - conda build tools/conda.recipe"
 
   # Install the package
   - conda install --use-local %PROJECT_NAME%
