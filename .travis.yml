@@ -94,7 +94,7 @@ install:
 # Set the version info from the git tag
 - git fetch origin --tags &&
   export PROJECT_VERSION=$(python tools/gitversion.py) &&
-  python tools/gitversion.py python > ${PROJECT_NAME}/version.py; 
+  python tools/gitversion.py python > ${PROJECT_NAME}/version.py;
 
 # Get a list of all build and runtime dependencies.
 # This should become easier, without the copy to conda.recipe.ugly.
@@ -216,4 +216,3 @@ deploy:
     repo: ${GITHUB_REPO_NAME}
     condition: "$TRAVIS_TAG != *[ab]* && $MYCONDAPY == 2.7 && $TRAVIS_OS_NAME == linux"
     tags: true
-
