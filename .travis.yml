@@ -134,7 +134,7 @@ script:
     (cd; nosetests ${PROJECT_NAME} -v --detailed-errors) &&
     conda uninstall ${CONDA_PKG_NAME_PY};
   else
-    python setup.py build_ext -i --define CYTHON_TRACE_NOGIL ${INPLACE_INC} &&
+    python setup.py build_ext -i --define CYTHON_TRACE_NOGIL &&
     nosetests ${PROJECT_NAME}
          -v --detailed-errors --with-coverage --cover-package=${PROJECT_NAME}
          --cover-tests --cover-inclusive --cover-branches &&
