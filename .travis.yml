@@ -58,6 +58,7 @@ branches:
 
 before_install:
 # Only run if tagged or if linux and py27 (will change to py36 layer)
+- echo $TRAVIS_TAG
 - if ! [[ $TRAVIS_TAG || $TRAVIS_OS_NAME == "linux" && $MYCONDAPY == "2.7" ]]; then exit 0; fi
 # Get miniconda. Take the right version, so re-installing python is hopefully not needed.
 - if test -e $HOME/miniconda/bin; then
