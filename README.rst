@@ -54,4 +54,5 @@ Encrypting tokens (Anaconda) and passwords on AppVeyor:
 - Only enter the password or token itself, so only the ``pass`` part of ``VAR=pass``. The ``VAR`` is still visible in .appveyor.tml``.
 
 
+
 - Copy to ``.appveyor.yml``.
