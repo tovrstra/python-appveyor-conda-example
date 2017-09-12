@@ -51,6 +51,7 @@ Encrypting tokens (Github, Anaconda) and passwords (PyPI) on Travis-CI:
 Encrypting tokens (Anaconda) and passwords on AppVeyor:
 
 - Use https://ci.appveyor.com/tools/encrypt
+
 - Only enter the password or token itself, so only the ``pass`` part of ``VAR=pass``. The ``VAR`` is still visible in .appveyor.tml``.
 
 
