@@ -217,5 +217,5 @@ deploy:
   local_dir: doc/_build/html
   on:
     repo: ${GITHUB_REPO_NAME}
-    condition: "$TRAVIS_TAG != *[ab]* && $MYCONDAPY == 2.7 && $TRAVIS_OS_NAME == linux"
+    condition: "-e doc && $TRAVIS_TAG != *[ab]* && $MYCONDAPY == 2.7 && $TRAVIS_OS_NAME == linux"
     tags: true
