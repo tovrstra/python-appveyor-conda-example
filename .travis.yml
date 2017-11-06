@@ -16,17 +16,6 @@ env:
 
 # Do not use Travis Python to save some time.
 language: generic
-os:
-  - linux
-    addons:
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-        packages:
-          - g++-7
-  - osx
-osx_image: xcode8.3
-dist: trusty
 sudo: false
 
 matrix:
@@ -49,7 +38,19 @@ matrix:
   env:
     global:
       - CC=gcc-7
-      - CXX=g++-7 
+      - CXX=g++-7
+
+  include:
+  - os: linux
+    dist: trusty
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - g++-7
+  - os: osx
+    osx_image: xcode8.3
 
 cache:
   directories:
