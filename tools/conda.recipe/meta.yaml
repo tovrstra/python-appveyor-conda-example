@@ -18,12 +18,12 @@ requirements:
     - cython >=0.24.1
     - setuptools
     - nose
-    - gcc     # [ not win ]
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
   run:
     - python
     - numpy
     - nose
-    - libgcc  # [ not win ]
 
 about:
   description: Demo python+cython project
