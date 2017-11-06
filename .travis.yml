@@ -16,8 +16,18 @@ env:
 
 # Do not use Travis Python to save some time.
 language: generic
+os: 
+  - linux
+  - osx
 sudo: false
-
+osx_image: xcode8.3
+dist: trusty
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
 matrix:
   # We only test on Linux with one specific Python version, unless we make a release. All
   # other cases are allowed to fail and will exit early. With the fast_finish option,
@@ -39,18 +49,6 @@ matrix:
     global:
       - CC=gcc-7
       - CXX=g++-7
-
-  include:
-  - os: linux
-    dist: trusty
-    addons:
-      apt:
-        sources:
-          - ubuntu-toolchain-r-test
-        packages:
-          - g++-7
-  - os: osx
-    osx_image: xcode8.3
 
 cache:
   directories:
