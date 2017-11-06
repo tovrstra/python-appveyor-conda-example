@@ -16,13 +16,18 @@ env:
 
 # Do not use Travis Python to save some time.
 language: generic
-os:
+os: 
   - linux
   - osx
+sudo: false
 osx_image: xcode8.3
 dist: trusty
-sudo: false
-
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-7
 matrix:
   # We only test on Linux with one specific Python version, unless we make a release. All
   # other cases are allowed to fail and will exit early. With the fast_finish option,
@@ -41,7 +46,6 @@ matrix:
   allow_failures:
   - os: osx
 
-
 cache:
   directories:
     - $HOME/download # Sufficient to add miniconda.sh to TRAVIS cache.
@@ -58,6 +62,7 @@ branches:
     - /^[0-9]+\.[0-9]+(\.[0-9]+)?([ab][0-9]+)?$/
 
 before_install:
+- if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CC=gcc-7 && export CXX=g++-7; fi
 - if ! [[ $TRAVIS_TAG || $TRAVIS_OS_NAME == "linux" && $MYCONDAPY == "2.7" ]]; then exit 0; fi
 # Get miniconda. Take the right version, so re-installing python is hopefully not needed.
 - if test -e $HOME/miniconda/bin; then
@@ -90,6 +95,7 @@ install:
 # Configure conda and get a few essentials
 - conda config --set always_yes yes
 - conda config --add channels theochem
+- conda config --add channels anaconda
 - conda install -q conda conda-build
 
 # Set the version info from the git tag
