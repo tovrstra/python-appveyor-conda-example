@@ -45,10 +45,6 @@ matrix:
   fast_finish: true
   allow_failures:
   - os: osx
-  env:
-    global:
-      - CC=gcc-7
-      - CXX=g++-7
 
 cache:
   directories:
@@ -66,7 +62,7 @@ branches:
     - /^[0-9]+\.[0-9]+(\.[0-9]+)?([ab][0-9]+)?$/
 
 before_install:
-- if [[ $TRAVIS_OS_NAME == "osx" ]]; then brew install gcc; fi
+- if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CC=gcc-7 && export CXX=g++-7; fi
 - if ! [[ $TRAVIS_TAG || $TRAVIS_OS_NAME == "linux" && $MYCONDAPY == "2.7" ]]; then exit 0; fi
 # Get miniconda. Take the right version, so re-installing python is hopefully not needed.
 - if test -e $HOME/miniconda/bin; then
