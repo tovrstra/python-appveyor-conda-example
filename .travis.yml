@@ -18,6 +18,12 @@ env:
 language: generic
 os:
   - linux
+    addons:
+      apt:
+        sources:
+          - ubuntu-toolchain-r-test
+        packages:
+          - g++-7
   - osx
 osx_image: xcode8.3
 dist: trusty
@@ -44,14 +50,6 @@ matrix:
     global:
       - CC=gcc-7
       - CXX=g++-7 
-  include:
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-7
 
 cache:
   directories:
