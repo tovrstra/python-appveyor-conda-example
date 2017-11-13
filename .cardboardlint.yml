@@ -7,4 +7,5 @@ linters:
 - pylint:
 - pycodestyle:
 - pydocstyle:
+    config: .pycodestylerc
 - whitespace:
