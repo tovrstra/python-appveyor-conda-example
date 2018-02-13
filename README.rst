@@ -1,11 +1,11 @@
-.. image:: https://travis-ci.org/theochem/python-cython-ci-example.svg?branch=master
-    :target: https://travis-ci.org/theochem/python-cython-ci-example
+.. image:: https://travis-ci.org/alexlib/python-cython-ci-example.svg?branch=master
+    :target: https://travis-ci.org/alexlib/python-cython-ci-example
 .. image:: https://ci.appveyor.com/api/projects/status/ora4yr7kot2ffr8x/branch/master?svg=true
-    :target: https://ci.appveyor.com/project/theochem-travis-uploader/python-cython-ci-example
-.. image:: https://anaconda.org/theochem/pycydemo/badges/version.svg
-    :target: https://anaconda.org/theochem/pycydemo
-.. image:: https://codecov.io/gh/theochem/python-cython-ci-example/branch/master/graph/badge.svg
-    :target: https://codecov.io/gh/theochem/python-cython-ci-example
+    :target: https://ci.appveyor.com/project/alexlib-travis-uploader/python-cython-ci-example
+.. image:: https://anaconda.org/alexlib/pycydemo/badges/version.svg
+    :target: https://anaconda.org/alexlib/pycydemo
+.. image:: https://codecov.io/gh/alexlib/python-cython-ci-example/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/alexlib/python-cython-ci-example
 
 Demo project for building and deploying a Python+Cython packages with AppVeyor
 CI and Travis CI.
