@@ -9,6 +9,7 @@ env:
     - PROJECT_NAME=pycydemo
     - GITHUB_REPO_NAME=theochem/python-cython-ci-example
     - CONDA_PKG_NAME_PY=pycydemo
+    - PYPI_LOGIN=theochem
 
 ####
 # EVERYTHING BELOW THIS LINE WILL BE COPIED INTO OTHER YMLs
@@ -203,7 +204,7 @@ deploy:
 
 - provider: pypi
   skip_cleanup: true
-  user: theochem
+  user: ${PYPI_LOGIN}
   password: ${PYPI_PASSWD}
   on:
     repo: ${GITHUB_REPO_NAME}
