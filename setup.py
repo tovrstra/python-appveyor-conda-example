@@ -13,8 +13,11 @@ def get_version():
     version string with single quotes.
 
     """
-    with open('pycydemo/version.py', 'r') as f:
-        return f.read().split('=')[-1].replace('\'', '').strip()
+    try:
+        with open('pycydemo/version.py', 'r') as f:
+            return f.read().split('=')[-1].replace('\'', '').strip()
+    except IOError:
+        return "0.0.0a1"
 
 
 def get_readme():

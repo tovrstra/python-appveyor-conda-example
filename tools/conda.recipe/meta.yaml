@@ -13,17 +13,23 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - python
     - numpy
     - cython >=0.24.1
     - setuptools
     - nose
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
   run:
-    - python
     - numpy
+test:
+  requires:
+    - python
     - nose
+  commands:
+    - conda inspect linkages pycydemo
+    - nosetests -v --detailed-errors pycydemo 
 
 about:
   description: Demo python+cython project
