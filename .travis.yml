@@ -22,7 +22,6 @@ language: generic
 os:
   - linux
   - osx
-osx_image: xcode8.3
 dist: trusty
 sudo: false
 
@@ -115,9 +114,8 @@ install:
 - conda install -q python=${MYCONDAPY} anaconda-client
 - export CONDA_PY=${MYCONDAPY//./}
 - if [[ ! $TRAVIS_TAG ]]; then
-    conda install -q ${CONDA_DEPENDENCIES}
-    # Install more recent stuff with pip
-    pip install --upgrade pylint codecov coverage pycodestyle pydocstyle
+    conda install -q ${CONDA_DEPENDENCIES};
+    pip install --upgrade pylint codecov coverage pycodestyle pydocstyle;
   fi
 # Show conda info for debugging
 - conda info -a
