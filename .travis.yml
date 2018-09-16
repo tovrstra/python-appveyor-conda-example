@@ -111,7 +111,7 @@ install:
 # Install extra package needed to make things work. Most things can be listed as
 # dependencies on meta.yaml and setup.py, unless setup.py already imports them.
 # Install conda tools for packaging and uploading
-- conda install -q python=${MYCONDAPY} anaconda-client numpy setuptools
+- conda install -q python=${MYCONDAPY} anaconda-client numpy setuptools cython
 - export CONDA_PY=${MYCONDAPY//./}
 - if ! [[ $TRAVIS_TAG ]]; then
     conda install -q ${CONDA_DEPENDENCIES};
